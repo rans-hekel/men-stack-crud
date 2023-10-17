@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+<nav class="navbar bg-dark mb-3">
+<div class="container-fluid">
+      <a class="navbar-brand text-light" href="/products">All Products</a>
+      <div class="navbar nav">
+        <a class="nav-link text-light" href="/products">All Products</a>
+        <a class="nav-link text-light" href="/products?category=Jaket">Jaket</a>
+        <a class="nav-link text-light" href="/products?category=Celana">Celana</a>
+        <a class="nav-link text-light" href="/products?category=Aksesoris">Aksesoris</a>
+        <a class="nav-link text-light" href="/products?category=Baju">Baju</a>
+      </div>
+        </div>
+      </nav>
+
+  <div class="container">
+    <a href="/products/create" class="btn btn-primary mb-3">Tambah Product</a>
+    <ul>
+          <% for( let Product of products ) { %>
+          <li class="mb-2">
+            <a href="/products/<%= Product._id %>" class="btn btn-success mb-2">
+            <%= Product.name %> - <%= Product.brand %>
+            </a>
+            </li>
+          <% } %>
+    </ul>
+  </div>
+
+<%- include('../partials/footer') %>

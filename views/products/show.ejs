@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <h1 class="text-xl"><%= product.name %></h1>
+            <h2 class="text-sm"><%= product.category %></h2>
+             <h3><%= product.brand %></h3>
+            <h5><%= product.price %></h5>
+             <h5><%= product.color %></h5>
+            <p><%= product.description %></p>
+            <a href="/products/<%= product._id %>/edit" class="btn btn-primary d-block w-25 mb-3">&gt; Edit A Product</a>
+            <form action="/products/<%= product._id %>?_method=DELETE" method="post">
+                <button type="submit" class="btn btn-danger mb-3 w-25">&reg; Delete</button>
+            </form>
+            <a href="/products" class="btn btn-success d-block w-25">&laquo; Back To Products</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<%- include('../partials/footer') %>

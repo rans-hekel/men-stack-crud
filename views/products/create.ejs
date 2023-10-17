@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+    <h1 class="mb-5">Edit A Product</h1>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="mb-3">
+                <form action="/products" method="post" class="mb-3">
+                    <label for="name" class="form-label text-dark">Name Products :</label>
+                   <input type="text" class="form-control mb-3" name="name" id="Name" placeholder="Your Name">
+                    <label for="brand" class="form-label text-dark">Brand :</label>
+                   <input type="text" class="form-control mb-3" name="brand" id="brand" placeholder="Brand">
+                    <label for="price" class="form-label text-dark">Price :</label>
+                   <input type="text" class="form-control mb-3" name="price" id="price" placeholder="Pricee ...">
+                    <label for="color" class="form-label text-dark">Color :</label>
+                   <input type="text" class="form-control mb-3" name="color" id="color" placeholder="This Color">
+                    <label for="category" class="form-label">Category :</label>
+                    <select class="form-select mb-3" name="category" id="category">
+                      <option selected disabled value="">Choose...</option>
+                      <option value="Aksesoris">Aksesoris</option>
+                      <option value="Baju">Baju</option>
+                      <option value="Celana">Celana</option>
+                      <option value="Jaket">Jaket</option>
+                    </select>
+                    <label for="description" class="form-label">Description :</label>
+                     <textarea class="form-control mb-3" id="description" name="description" placeholder="description..."></textarea>
+                     <button type="submit" class="btn btn-success">Add Product</button>
+                </form>
+                <a href="/products" class="btn btn-danger">&laquo; Back To All Products</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('../partials/footer') %>

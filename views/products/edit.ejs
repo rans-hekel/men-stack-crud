@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+    <h1 class="mb-5">Add A Product</h1>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="mb-3">
+                <form action="/products/<%= product._id %>?_method=PUT" method="post" class="mb-3">
+                    <label for="name" class="form-label text-dark">Name Products :</label>
+                   <input type="text" class="form-control mb-3" name="name" id="Name" value="<%= product.name %>">
+                    <label for="brand" class="form-label text-dark">Brand :</label>
+                   <input type="text" class="form-control mb-3" name="brand" id="brand" value="<%= product.brand %>">
+                    <label for="price" class="form-label text-dark">Price :</label>
+                   <input type="text" class="form-control mb-3" name="price" id="price" value="<%= product.price %>">
+                    <label for="color" class="form-label text-dark">Color :</label>
+                   <input type="text" class="form-control mb-3" name="color" id="color" value="<%= product.color %>">
+                    <label for="category" class="form-label">Category :</label>
+                    <select class="form-select mb-3" name="category" id="category">
+                      <option selected disabled value="">Choose...</option>
+                      <option value="Aksesoris" <%= product.category == 'Aksesoris' ? 'selected' : '' %> >Aksesoris</option>
+                      <option value="Baju" <%= product.category == 'Baju' ? 'selected' : '' %> >Baju</option>
+                      <option value="Celana" <%= product.category == 'Celana' ? 'selected' : '' %> >Celana</option>
+                      <option value="Jaket" <%= product.category == 'Jaket' ? 'selected' : '' %> >Jaket</option>
+                    </select>
+                    <label for="description" class="form-label">Description :</label>
+                     <textarea class="form-control mb-3" id="description" name="description" value="<%= product.description %>"></textarea>
+                     <button type="submit" class="btn btn-success">Edit Products</button>
+                </form>
+                <a href="/products" class="btn btn-danger">&laquo; Back To All Products</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('../partials/footer') %>
