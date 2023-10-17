@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Product = require("./models/Product");
 
 mongoose
-  .connect("mongodb://localhost:27017/codepolitan")
+  .connect("mongodb://localhost:27017/YourDb")
   .then(() => {
     console.log("connect to mongoodb");
   })
