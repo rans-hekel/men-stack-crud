@@ -1,11 +1,11 @@
 <%- include('../partials/header') %>
 
 <div class="container">
-    <h1 class="mb-5">Edit A Product</h1>
+    <h1 class="mb-5">Add A Product</h1>
     <div class="row">
         <div class="col-lg-4">
             <div class="mb-3">
-                <form action="/products" method="post" class="mb-3">
+                <form action="/garments/<%= garment_id %>/products" method="post" class="mb-3">
                     <label for="name" class="form-label text-dark">Name Products :</label>
                    <input type="text" class="form-control mb-3" name="name" id="Name" placeholder="Your Name">
                     <label for="brand" class="form-label text-dark">Brand :</label>

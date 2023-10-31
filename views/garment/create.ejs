@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+    <h1 class="mb-5">Add A garment</h1>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="mb-3">
+                <form action="/garments" method="post" class="mb-3">
+                    <label for="name" class="form-label text-dark">Name garment :</label>
+                   <input type="text" class="form-control mb-3" name="name" id="Name" placeholder="Your Name">
+                    <label for="location" class="form-label text-dark">location :</label>
+                   <input type="text" class="form-control mb-3" name="location" id="location" placeholder="location">
+                    <label for="contact" class="form-label text-dark">Contact :</label>
+                   <input type="text" class="form-control mb-3" name="contact" id="contact" placeholder="contact">
+                    <button type="submit" class="btn btn-primary">submit</button>
+                </form>
+                <!-- <a href="/products" class="btn btn-danger">&laquo; Back To All Products</a> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('../partials/footer') %>

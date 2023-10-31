@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+<h1 class="text-dark font-weight-bold">Garments</h1>
+  <div class="container">
+    <a href="/garments/create" class="btn btn-primary mb-3">Tambah garment</a>
+    <ul>
+          <% for( let garment of garments ) { %>
+          <li class="mb-2">
+            <a href="/garments/<%= garment._id %>" class="btn btn-success mb-2">
+            <%= garment.name %> - <%= garment.location %>
+            </a>
+            </li>
+          <% } %>
+    </ul>
+  </div>
+
+<%- include('../partials/footer') %>

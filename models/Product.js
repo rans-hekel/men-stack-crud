@@ -3,7 +3,7 @@ const { mongoose, Schema } = require("mongoose");
 const productSchema = new Schema({
   name: {
     type: String,
-    required: true,
+    required: [true, "Product tidak boleh kosong"],
   },
   brand: {
     type: String,
@@ -26,6 +26,10 @@ const productSchema = new Schema({
     type: String,
     required: true,
     maxLength: 150,
+  },
+  garment: {
+    type: Schema.Types.ObjectId,
+    ref: "Garment",
   },
 });
 
