@@ -5,6 +5,8 @@ const methodOverride = require("method-override");
 const app = express();
 const port = 3000;
 const ErrorHandler = require("./ErrorHandler");
+const session = require("express-session");
+const flash = require("connect-flash");
 
 // model products
 const Product = require("./models/product");
@@ -29,6 +31,23 @@ app.use(express.urlencoded({ extended: true }));
 // ejs
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+// express session
+app.use(
+  session({
+    secret: "fuxuan",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+// middleware flash
+app.use(flash());
+
+// middleware res.local
+app.use((req, res, next) => {
+  res.locals.messages = req.flash("messages");
+  next();
+});
+
 // bungkus function secara async buat errorhandler
 function wrapAsync(fn) {
   return function (req, res, next) {
@@ -44,7 +63,9 @@ app.get(
   "/garments",
   wrapAsync(async (req, res) => {
     const garments = await Garment.find({});
-    res.render("garment/index", { garments });
+    res.render("garment/index", {
+      garments,
+    });
   })
 );
 
@@ -57,7 +78,7 @@ app.post(
   wrapAsync(async (req, res) => {
     const garment = new Garment(req.body);
     await garment.save();
-    // req.flash('flash_messages', 'Berhasil menambahkan data Pabrik!')
+    req.flash("flash_messages", "Berhasil menambahkan data Pabrik!");
     res.redirect(`/garments`);
   })
 );
