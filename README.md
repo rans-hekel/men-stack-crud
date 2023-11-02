@@ -1,9 +1,7 @@
 # MEN Stack (MongoDB, ExpressJS, Node.js)
 
 ## What does this do?
-This is a sample code demonstrating a basic interaction between **MongoDB**, and **Node.js** (with the help of **ExpressJS** for proper routing).
-
-A simple single-page app, with the help of jQuery for ajax calls to the Node.js server, and navigating through pages. It emphasizes the use of basic CRUD operations for MongoDB.
+Basic Crud for MEN Stack
 
 ## Requirements
 * MongoDB server
@@ -20,8 +18,11 @@ To close the server, just press `ctrl + c` (depends on OS terminal)
 
 ## Resources used
 * [ExpressJS](https://expressjs.com/)
+* [EJS](https://ejs.co/)
 * [Bootstrap 5.3](https://getbootstrap.com/docs/5.3/)
 * [Node.js](https://nodejs.org/)
 * [MongoDB](https://mongodb.org/)
 * [Body Parser (for response body decoding)](https://www.npmjs.com/package/body-parser/)
 * [Method Override](https://www.npmjs.com/package/method-override)
+* [Express-Session](https://www.npmjs.com/package/express-session)
+* [Connect-Flash](https://www.npmjs.com/package/connect-flash)
